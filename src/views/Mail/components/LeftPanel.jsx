@@ -20,7 +20,6 @@ const LeftPanel = ({ inboxNotReadCount }) => {
     receipentName.length === 0 || subject.length === 0 || message.length === 0;
 
   const sendMail = () => {
-    debugger
     let user = localStorage.getItem("__auth");
     if (user !== receipentName) {
       if (

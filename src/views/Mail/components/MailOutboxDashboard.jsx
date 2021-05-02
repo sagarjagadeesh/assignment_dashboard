@@ -73,7 +73,6 @@ class DashboardMailOutbox extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("outbox");
     let inbox = JSON.parse(item);
-    debugger;
     let filterData = inbox.filter((d) => {
       if (selectedMails.indexOf(d.id) > -1) {
         return null;

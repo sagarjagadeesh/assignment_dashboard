@@ -22,7 +22,6 @@ class Dashboard extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
-    console.log(inbox);
     let filterData = inbox?.filter((d) => d.receiverEmail === user);
     this.setState({
       allMails: filterData,
