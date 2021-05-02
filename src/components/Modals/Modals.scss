@@ -1,0 +1,51 @@
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-modal {
+  .modal-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    margin: 1rem;
+  }
+
+  .modal-footer {
+    border-top: none !important;
+  }
+  
+  .modal-content {
+    height: calc(100vh - 10rem);
+    width: calc(100vw - 0) !important;
+    border-radius: 0.8rem;
+  }
+}
+
+
+.my-small-modal {
+  .modal-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    margin: 1rem;
+  }
+
+  .modal-footer {
+    border-top: none !important;
+    justify-content: center;
+
+    .btn {
+      height: 3rem;
+      padding: 0 !important;
+      width: 6rem;
+      border-radius: 0.3rem !important;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .modal-content {
+    height: 20rem;
+    border-radius: 0.8rem;
+    width: 35rem;
+  }
+}

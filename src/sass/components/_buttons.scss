@@ -1,0 +1,154 @@
+.btn-primary {
+  border-radius: 0.2rem;
+  background-color: var(--highlight-primary);
+  border: 0.1rem solid var(--highlight-primary);
+  color: white;
+  font-weight: 500;
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem var(--highlight-primary) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Baloo Da 2";
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 3.8rem;
+  text-transform: initial !important;
+
+  i {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-top: -0.3rem;
+  }
+
+  &:hover {
+    background-color: var(--highlight-primary);
+    border: 0.1rem solid var(--highlight-primary);
+    color: white;
+  }
+
+  &:active {
+    background-color: var(--highlight-primary) !important;
+    border: 0.1rem solid var(--highlight-primary) !important;
+    color: white;
+    font-weight: 500;
+    background-blend-mode: multiply;
+    border-color: var(--highlight-primary) !important;
+  }
+
+  &:focus {
+    background-color: var(--highlight-primary) !important;
+    border-color: var(--highlight-primary) !important;
+  }
+}
+
+
+.btn-default {
+  border-radius: 0.2rem;
+  background-color: white;
+  border: 0.1rem solid var(--light-magenta);
+  color: var(--light-magenta) !important;
+  font-weight: 500;
+  outline: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Baloo Da 2";
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 2.8rem;
+  text-transform: uppercase;
+   box-shadow: none !important;
+  i {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-top: -0.3rem;
+  }
+
+  &:hover {
+    background-color: var(--light-magenta);
+    border: 0.1rem solid var(--light-magenta);
+    color: white !important;
+  }
+
+  &:active {
+    background-color: var(--light-magenta) !important;
+    border: 0.1rem solid var(--light-magenta) !important;
+    color: white !important;
+    font-weight: 500;
+    background-blend-mode: multiply;
+    border-color: var(--light-magenta) !important;
+  }
+
+  &:focus {
+    background-color: var(--light-magenta) !important;
+    border-color: var(--light-magenta) !important;
+    color: white !important;
+  }
+}
+
+.btn-disable {
+  border-radius: 6px;
+  background-color: #eff0f5 !important;
+  border-color: #eff0f5 !important;
+  color: #565a6c !important;
+  font-weight: 500;
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem #eff0f5 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Baloo Da 2";
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 2.8rem;
+  text-transform: uppercase;
+  cursor: not-allowed !important;
+  border: none !important;
+}
+
+.btn-primary-green {
+  border-radius: 0.2rem;
+  background-color: var(--vivid-green);
+  border: 0.1rem solid var(--vivid-green);
+  color: var(--text-primary);
+  font-weight: 600 !important;
+  font-weight: 500;
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem var(--vivid-green) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Baloo Da 2";
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 2.8rem;
+  text-transform: initial !important;
+  i {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-top: -0.3rem;
+  }
+
+  &:hover {
+    background-color: var(--vivid-green);
+    border: 0.1rem solid var(--vivid-green);
+    color: var(--text-primary);
+    font-weight: 600 !important;
+  }
+
+  &:active {
+    background-color: var(--vivid-green) !important;
+    border: 0.1rem solid var(--vivid-green) !important;
+    color: var(--text-primary);
+    font-weight: 600 !important;
+    font-weight: 500;
+    background-blend-mode: multiply;
+    border-color: var(--vivid-green) !important;
+  }
+
+  &:focus {
+    background-color: var(--vivid-green) !important;
+    border-color: var(--vivid-green) !important;
+  }
+}

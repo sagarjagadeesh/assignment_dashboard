@@ -1,0 +1,116 @@
+body {
+  --highlight-primary: #ee892b;
+
+  --bg-1: #ffffff;
+  --bg-2: #f3f3f4;
+
+  --theme-color-1: #58b595;
+  --theme-color-2: #ee8a33;
+  --theme-color-3: #6c90a1;
+  --theme-color-4: #365573;
+  --theme-color-5: #47799a;
+  --theme-color-6: #8e9599;
+
+  --background-color: #f3f3f4;
+  --background-color-2: rgba(249, 249, 249, 0.2);
+  --foreground-color: white;
+  --separator-color: rgb(230, 235, 241);
+
+  --dark-bg-primary: #273b4b;
+  --dark-bg-secondary: #2e4051;
+  --dark-bg-ternary: #283847;
+  --dark-bg-four: rgba(0,0,0, 0.6);
+
+  
+  --text-1: #f3f4f5;
+  --text-2: #7d8a9c;
+  --text-secondary: #697084;
+
+  --failed: rgb(196, 63, 63, 0.6);
+  --success: #14e528;
+
+  --shadow: rgb(0 0 0 / 20%);
+  --shadow-2: rgb(0 0 0 / 14%);
+  --shadow-2: rgb(0 0 0 / 12%);
+
+  --border-color: #e5e5e5;
+
+  --disabled: #dcdcdc;
+}
+
+.body-light {
+  --highlight-primary: #ee892b;
+
+  --bg-1: #ffffff;
+  --bg-2: #f3f3f4;
+
+  --theme-color-1: #58b595;
+  --theme-color-2: #ee8a33;
+  --theme-color-3: #6c90a1;
+  --theme-color-4: #365573;
+  --theme-color-5: #47799a;
+  --theme-color-6: #8e9599;
+
+  --background-color: #f3f3f4;
+  --background-color-2: rgba(249, 249, 249, 0.2);
+  --foreground-color: white;
+  --separator-color: rgb(230, 235, 241);
+
+  --dark-bg-primary: #273b4b;
+  --dark-bg-secondary: #2e4051;
+  --dark-bg-ternary: #283847;
+  --dark-bg-four: rgba(40, 56, 71, 0.9);
+
+  
+  --text-1: #f3f4f5;
+  --text-2: #7d8a9c;
+  --text-secondary: #697084;
+
+  --failed: rgb(196, 63, 63);
+  --success: #14e528;
+
+  --shadow: rgb(0 0 0 / 15%);
+  --shadow-2: rgb(0 0 0 / 12%);
+
+  --border-color: #e5e5e5;
+
+  --disabled: #dcdcdc;
+}
+
+.body-dark {
+  --highlight-primary: #ee892b;
+
+  --bg-1: #283142;
+  --bg-2: #1c2531;
+
+  --theme-color-1: #58b595;
+  --theme-color-2: #ee8a33;
+  --theme-color-3: #6c90a1;
+  --theme-color-4: #365573;
+  --theme-color-5: #47799a;
+  --theme-color-6: #8e9599;
+
+  --background-color: #f3f3f4;
+  --background-color-2: rgba(249, 249, 249, 0.2);
+  --separator-color: #283142;
+
+  --dark-bg-primary: #273b4b;
+  --dark-bg-secondary: #283142;
+  --dark-bg-ternary: #283847;
+  --dark-bg-four: rgba(40, 56, 71, 0.9);
+
+  
+  --text-1: #f3f4f5;
+  --text-2: #d2d5de;
+  --text-secondary: #697084;
+
+  --failed: rgb(196, 63, 63);
+  --success: #14e528;
+
+  --shadow: rgb(0 0 0 / 15%);
+  --shadow-2: rgb(0 0 0 / 12%);
+
+  --border-color: #e5e5e5;
+
+  --disabled: #dcdcdc;
+}

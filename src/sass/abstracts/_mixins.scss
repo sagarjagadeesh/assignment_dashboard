@@ -1,0 +1,32 @@
+@mixin largeScreen(){
+  @media (min-width: 1441px) {
+    max-width: 1440px;
+    margin: 0 auto;
+    @content
+  }
+
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == small-laptop {
+    @media (min-width: 831px) and (max-width: 1280px) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.6em) and (max-width: 830px) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}

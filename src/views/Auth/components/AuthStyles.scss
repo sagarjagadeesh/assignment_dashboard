@@ -1,0 +1,128 @@
+.auth-container {
+  height: 100vh;
+
+  .opacity {
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .second-container {
+      width: 40rem;
+      height: 52rem;
+      box-shadow: 0 0 10px 0 var(--shadow);
+      background-color: var(--bg-1);
+      border-radius: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+
+      .back-arrow {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 3rem;
+        cursor: pointer;
+
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .form-container {
+        width: 75%;
+        margin: 4rem;
+
+        .main-name {
+          font-size: 2rem;
+          color: var(--highlight-primary);
+          text-align: center;
+          font-weight: 500;
+        }
+
+        .sub-main-name {
+          font-size: 1.2rem;
+          color: var(--text-2);
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .form-group {
+          margin-bottom: 3rem;
+          position: relative;
+
+          .form-close {
+            position: absolute;
+            top: 3.9rem;
+            font-size: 1.8rem;
+            right: 1rem;
+            color: var(--border-color);
+            cursor: pointer;
+          }
+
+          .form-eye {
+            position: absolute;
+            top: 3.9rem;
+            font-size: 2rem;
+            right: 3.2rem;
+            color: var(--border-color);
+            cursor: pointer;
+          }
+        }
+
+        .text-muted {
+          margin-top: 0.6rem;
+        }
+
+        label {
+          font-size: 1.4rem;
+        }
+
+        .form-check {
+          align-items: center;
+          display: flex;
+          label {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .forgot-password-cont {
+          display: flex;
+          justify-content: space-between;
+
+          .forgot-password {
+            font-size: 1rem;
+            color: var(--highlight-primary);
+            letter-spacing: 0.1ch;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .btn-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 4rem;
+
+          .btn {
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.compose-mail-cont {
+  position: fixed;
+  background-color: white;
+  height: calc(100% - 22rem);
+  top: auto;
+  bottom: 0;
+  width: 60rem;
+  right: 3rem;
+  box-shadow: 0 0 5px var(--shadow-2);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  z-index: 9999;
+
+  .compose-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 4.5rem;
+    background-color: var(--dark-bg-four);
+    color: white;
+    padding: 0 2rem;
+    font-size: 1.4rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-control {
+    border: none !important;
+    border-bottom: 0.1rem solid var(--border-color) !important;
+    box-shadow: 0 0 0 0.16rem var(--separator-color) !important;
+    border-radius: 0 !important;
+  }
+
+  textarea {
+    height: 68%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 68%;
+    max-height: 68%;
+    border: none;
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+    color: var(--text-2);
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .btn {
+    height: 2.8rem;
+    background-color: var(--theme-color-1) !important;
+    border-color: var(--theme-color-1) !important;
+    box-shadow: none !important;
+    border-radius: 0.3rem !important;
+    margin-left: 1rem;
+  }
+}
