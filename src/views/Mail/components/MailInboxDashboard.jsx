@@ -15,6 +15,7 @@ class Dashboard extends Component {
   state = {
     selectedMails: [],
     allMails: [],
+    searchKey: "",
   };
 
   componentDidMount() {
@@ -102,12 +103,22 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { selectedMails, allMails } = this.state;
+    const { selectedMails, allMails, searchKey } = this.state;
+    let mails = allMails.filter((d) =>
+      searchKey.length === 0
+        ? d
+        : d.message.toLowerCase().includes(searchKey.toLowerCase())
+    );
     return (
       <div className="right-box">
         <div className="main-heading-cont">
           <div className="name">Inbox</div>
-          <FormControl type="text" placeholder="Search..." />
+          <FormControl
+            type="text"
+            placeholder="Search messages."
+            onChange={(ev) => this.setState({ searchKey: ev.target.value })}
+            value={searchKey}
+          />
         </div>
         <div className="main-heading-cont-second">
           <div className="cont-1">
@@ -140,36 +151,44 @@ class Dashboard extends Component {
         <div className="fixTableHead">
           <Table hover>
             <tbody>
-              {allMails
-                .sort((a, b) => b.id - a.id)
-                .map((d) => (
-                  <tr
-                    className={
-                      selectedMails.indexOf(d.id) > -1 ? "active-tr" : ""
-                    }
-                    onClick={() => this.handleReadMessage(d)}
-                  >
-                    <td>
-                      <input
-                        type="checkbox"
-                        onChange={() => this.handleSelect(d.id)}
-                        onClick={(ev) => ev.stopPropagation()}
-                        value={selectedMails.indexOf(d.id) > -1}
-                        checked={selectedMails.indexOf(d.id) > -1}
-                      />
-                    </td>
-                    <td>
-                      <div>
-                        <span>{d.senderName}</span>
-                        {!d.read && <span className="new-hint">new</span>}
-                      </div>
-                    </td>
-                    <td>
-                      <div>{d.message}</div>
-                    </td>
-                    <td>{new Date(d.time).toLocaleDateString()}</td>
-                  </tr>
-                ))}
+              {mails.length > 0 ? (
+                mails
+                  .sort((a, b) => b.id - a.id)
+                  .map((d) => (
+                    <tr
+                      className={
+                        selectedMails.indexOf(d.id) > -1 ? "active-tr" : ""
+                      }
+                      onClick={() => this.handleReadMessage(d)}
+                    >
+                      <td>
+                        <input
+                          type="checkbox"
+                          onChange={() => this.handleSelect(d.id)}
+                          onClick={(ev) => ev.stopPropagation()}
+                          value={selectedMails.indexOf(d.id) > -1}
+                          checked={selectedMails.indexOf(d.id) > -1}
+                        />
+                      </td>
+                      <td>
+                        <div>
+                          <span>{d.senderName}</span>
+                          {!d.read && <span className="new-hint">new</span>}
+                        </div>
+                      </td>
+                      <td>
+                        <div>{d.message}</div>
+                      </td>
+                      <td>{new Date(d.time).toLocaleDateString()}</td>
+                    </tr>
+                  ))
+              ) : (
+                <td colSpan={4}>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    No Mails Found
+                  </div>
+                </td>
+              )}
             </tbody>
           </Table>
         </div>
