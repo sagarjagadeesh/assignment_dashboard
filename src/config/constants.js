@@ -101,10 +101,11 @@ export const mailData = [
     read: false,
     time: today,
     id: 121,
-    subject: "Motivational Quotes"
+    subject: "Motivational Quotes",
+    cc: "testuser2@gmail.com"
   },
   {
-    message: "It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.” – Inspirational Quote By Vince Lombardi",
+    message: "“One Of The Lessons That I Grew Up With Was To Always Stay True To Yourself And Never Let What Somebody Else Says Distract You From Your Goals.” – Michelle Obama",
     senderName: "Anna smith",
     senderEmail: "testuser1@gmail.com",
     receiverName: "Sagar",
@@ -112,10 +113,35 @@ export const mailData = [
     read: false,
     time: today,
     id: 122,
-    subject: "Motivational Quotes"
+    subject: "Motivational Quotes",
+    cc: ""
   },
   {
-    message: "If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.” – Steve Jobs",
+    message: "““I Think Goals Should Never Be Easy, They Should Force You To Work, Even If They Are Uncomfortable At The Time.” – Michael Phelps",
+    senderName: "Anna Smith",
+    senderEmail: "testuser1@gmail.com",
+    receiverName: "Mailchip",
+    receiverEmail: "testuser2@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 128,
+    subject: "Motivational Quotes",
+    cc: ""
+  },
+  {
+    message: "““I Think Goals Should Never Be Easy, They Should Force You To Work, Even If They Are Uncomfortable At The Time.” – Michael Phelps",
+    senderName: "Anna Smith",
+    senderEmail: "testuser1@gmail.com",
+    receiverName: "Mailchip",
+    receiverEmail: "testuser2@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 128,
+    subject: "Motivational Quotes",
+    cc: "testuser@gmail.com"
+  },
+  {
+    message: "“Today’s Accomplishments Were Yesterday’s Impossibilities.” – Robert H. Schuller",
     senderName: "Sagar",
     senderEmail: "testuser@gmail.com",
     receiverName: "Anna smith",
@@ -123,7 +149,8 @@ export const mailData = [
     read: false,
     time: yesterday,
     id: 123,
-    subject: "Motivational Quotes"
+    subject: "Motivational Quotes",
+    cc: "testuser2@gmail.com"
   },
   {
     message: "People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.” – Rob Siltanen",
@@ -134,6 +161,103 @@ export const mailData = [
     read: false,
     time: yesterday,
     id: 124,
-    subject: "Motivational Quotes"
+    subject: "Motivational Quotes",
+    cc: ""
+  },
+  {
+    message: "“Things Work Out Best For Those Who Make The Best Of How Things Work Out.” – Positive Quote By John Wooden",
+    senderName: "Sagar",
+    senderEmail: "testuser@gmail.com",
+    receiverName: "Mailchip",
+    receiverEmail: "testuser2@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 125,
+    subject: "Motivational Quotes",
+    cc: "testuser1@gmail.com"
+  },
+  {
+    message: "“A Room Without Books Is Like A Body Without A Soul.” – Marcus Tullius Cicero",
+    senderName: "Sagar",
+    senderEmail: "testuser@gmail.com",
+    receiverName: "Mailchip",
+    receiverEmail: "testuser2@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 126,
+    subject: "Motivational Quotes",
+    cc: ""
+  },
+  {
+    message: "“Things Work Out Best For Those Who Make The Best Of How Things Work Out.” – Positive Quote By John Wooden",
+    senderName: "Sagar",
+    senderEmail: "testuser@gmail.com",
+    receiverName: "Mailchip",
+    receiverEmail: "testuser2@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 127,
+    subject: "Motivational Quotes",
+    cc: "testuser1@gmail.com"
+  },
+  {
+    message: "The Only Way To Do Great Work Is To Love What You Do. If You Haven’t Found It Yet, Keep Looking. Don’t Settle.” – Steve Jobs",
+    senderName: "Mailchip",
+    senderEmail: "testuser2@gmail.com",
+    receiverName: "Anna smith",
+    receiverEmail: "testuser1@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 128,
+    subject: "Motivational Quotes",
+    cc: "testuser@gmail.com"
+  },
+  {
+    message: "You Don’t Have To Be Great To Start, But You Have To Start To Be Great.” – Zig Ziglar",
+    senderName: "Mailchip",
+    senderEmail: "testuser2@gmail.com",
+    receiverName: "Anna smith",
+    receiverEmail: "testuser1@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 129,
+    subject: "Motivational Quotes",
+    cc: ""
+  },
+  {
+    message: "“Things Work Out Best For Those Who Make The Best Of How Things Work Out.” – Positive Quote By John Wooden",
+    senderName: "Mailchip",
+    senderEmail: "testuser2@gmail.com",
+    receiverName: "Sagar",
+    receiverEmail: "testuser@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 130,
+    subject: "Motivational Quotes",
+    cc: "testuser1@gmail.com"
+  },
+  {
+    message: "A Clear Vision, Backed By Definite Plans, Gives You A Tremendous Feeling Of Confidence And Personal Power.” – Brian Tracy",
+    senderName: "Mailchip",
+    senderEmail: "testuser2@gmail.com",
+    receiverName: "Sagar",
+    receiverEmail: "testuser@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 131,
+    subject: "Motivational Quotes",
+    cc: ""
+  },
+  {
+    message: "There Are No Limits To What You Can Accomplish, Except The Limits You Place On Your Own Thinking.” – Brian Tracy",
+    senderName: "Mailchip",
+    senderEmail: "testuser2@gmail.com",
+    receiverName: "Sagar",
+    receiverEmail: "testuser@gmail.com",
+    read: false,
+    time: yesterday,
+    id: 132,
+    subject: "Motivational Quotes",
+    cc: "testuser1@gmail.com"
   },
 ];

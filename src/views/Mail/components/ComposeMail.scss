@@ -1,7 +1,7 @@
 .compose-mail-cont {
   position: fixed;
   background-color: white;
-  height: calc(100% - 22rem);
+  height: calc(100% - 15rem);
   top: auto;
   bottom: 0;
   width: 60rem;
@@ -32,15 +32,15 @@
   }
 
   textarea {
-    height: 68%;
+    height: 63%;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-    min-height: 68%;
-    max-height: 68%;
+    min-height: 63%;
+    max-height: 63%;
     border: none;
     padding: 2rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--text-2);
     outline: none !important;
     box-shadow: none !important;

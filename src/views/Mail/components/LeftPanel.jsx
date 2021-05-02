@@ -15,41 +15,57 @@ const LeftPanel = ({ inboxNotReadCount }) => {
   const [openComposeMail, setOpenComposeMail] = useState(false);
   const [receipentName, setReceipentName] = useState("");
   const [subject, setSubject] = useState("");
+  const [ccUsers, setCC] = useState("");
   const [message, setMessage] = useState("");
   const disable =
     receipentName.length === 0 || subject.length === 0 || message.length === 0;
 
   const sendMail = () => {
-    debugger
     let user = localStorage.getItem("__auth");
     if (user !== receipentName) {
       if (
         receipentName === "testuser@gmail.com" ||
-        receipentName === "testuser1@gmail.com"
+        receipentName === "testuser1@gmail.com" ||
+        receipentName === "testuser2@gmail.com"
       ) {
-        let item = localStorage.getItem("outbox");
-        let last_message_id = localStorage.getItem("last_message_id");
-        let inbox = JSON.parse(item);
-        let payload = {
-          message: message,
-          senderName: user === "testuser@gmail.com" ? "Sagar" : "Anna Smith",
-          senderEmail: user,
-          receiverName: user === "testuser@gmail.com" ? "Anna Smith" : "Sagar",
-          receiverEmail: receipentName,
-          read: false,
-          time: today,
-          id: parseInt(last_message_id) + 1,
-          subject: subject,
-        };
-        let filterData = inbox.concat([payload]);
-        localStorage.setItem("outbox", JSON.stringify(filterData));
-        localStorage.setItem("inbox", JSON.stringify(filterData));
-        localStorage.setItem("last_message_id", parseInt(last_message_id) + 1);
-        notify.success("Success", "Mail Sent Successfully");
-        setOpenComposeMail(!openComposeMail);
-        setReceipentName("");
-        setSubject("");
-        setMessage("");
+        if (receipentName !== ccUsers && ccUsers !== user) {
+          let inboxItem = localStorage.getItem("inbox");
+          let outboxItem = localStorage.getItem("outbox");
+          let last_message_id = localStorage.getItem("last_message_id");
+          let inbox = JSON.parse(inboxItem);
+          let outbox = JSON.parse(outboxItem);
+          let payload = {
+            message: message,
+            senderName: user === "testuser@gmail.com" ? "Sagar" : user === "testuser1@gmail.com" ? "Anna Smith" : "Mailchip",
+            senderEmail: user,
+            receiverName:
+              user === receipentName === "testuser@gmail.com" ? "Sagar" : receipentName === "testuser1@gmail.com" ? "Anna Smith" : "Mailchip",
+            receiverEmail: receipentName,
+            read: false,
+            time: today,
+            id: parseInt(last_message_id) + 1,
+            subject: subject,
+            cc: ccUsers
+          };
+          let filterData1 = inbox.concat([payload]);
+          let filterData2 = outbox.concat([payload]);
+          localStorage.setItem("inbox", JSON.stringify(filterData1));
+          localStorage.setItem("outbox", JSON.stringify(filterData2));
+          localStorage.setItem(
+            "last_message_id",
+            parseInt(last_message_id) + 1
+          );
+          notify.success("Success", "Mail Sent Successfully");
+          setOpenComposeMail(!openComposeMail);
+          setReceipentName("");
+          setSubject("");
+          setMessage("");
+        } else {
+          notify.error(
+            "Something went wrong",
+            "Sender Address Rejected: user already added."
+          );
+        }
       } else {
         notify.error(
           "Something went wrong",
@@ -206,6 +222,14 @@ const LeftPanel = ({ inboxNotReadCount }) => {
               placeholder="Receipents Mail"
               onChange={(ev) => setReceipentName(ev.target.value)}
               value={receipentName}
+            />
+          </div>
+          <div>
+            <FormControl
+              type="text"
+              placeholder="Cc"
+              onChange={(ev) => setCC(ev.target.value)}
+              value={ccUsers}
             />
           </div>
           <div>

@@ -19,7 +19,8 @@ class AuthIndex extends Component {
     const { username, password } = this.state;
     if (
       (username === "testuser@gmail.com" && password === "test@123456") ||
-      (username === "testuser1@gmail.com" && password === "test1@123456")
+      (username === "testuser1@gmail.com" && password === "test1@123456") ||
+      (username === "testuser2@gmail.com" && password === "test2@123456")
     ) {
       let check = localStorage.getItem("inbox");
       if (check === null) {

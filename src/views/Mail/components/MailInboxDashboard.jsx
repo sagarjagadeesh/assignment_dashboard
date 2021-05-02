@@ -23,7 +23,9 @@ class Dashboard extends Component {
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
     console.log(inbox);
-    let filterData = inbox?.filter((d) => d.receiverEmail === user);
+    let filterData = inbox?.filter(
+      (d) => d.receiverEmail === user || d.cc === user
+    );
     this.setState({
       allMails: filterData,
     });
@@ -33,7 +35,9 @@ class Dashboard extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
-    let filterData = inbox?.filter((d) => d.receiverEmail === user);
+    let filterData = inbox?.filter(
+      (d) => d.receiverEmail === user || d.cc === user
+    );
     this.setState({
       allMails: filterData,
     });
@@ -70,16 +74,34 @@ class Dashboard extends Component {
 
   deleteMails = () => {
     const { selectedMails } = this.state;
+    let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
+    let payload = {};
     let filterData = inbox.filter((d) => {
       if (selectedMails.indexOf(d.id) > -1) {
-        return null;
+        if (d.cc !== "") {
+          payload = {
+            ...d,
+            receiverName:
+              d.cc === "testuser@gmail.com"
+                ? "Sagar"
+                : d.cc === "testuser1@gmail.com"
+                ? "Anna Smith"
+                : "Mailchip",
+            receiverEmail: d.cc,
+            cc: "",
+          };
+          let filterData1 = inbox.concat([payload]);
+          localStorage.setItem("inbox", JSON.stringify(filterData1));
+        } else return null;
       } else return d;
     });
     localStorage.setItem("inbox", JSON.stringify(filterData));
     this.setState({
-      allMails: filterData,
+      allMails: filterData.filter(
+        (d) => d.receiverEmail === user || d.cc === user
+      ),
     });
   };
 

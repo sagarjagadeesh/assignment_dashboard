@@ -14,13 +14,19 @@ class ReadMail extends Component {
             <div className="back-cont" onClick={() => history.goBack()}>
               <BiArrowBack />
             </div>
-            {inbox.subject}
+            {inbox?.subject}
           </div>
         </div>
         <div className="second-cont">
-          <span>from : {inbox.senderName}</span>
+          <span>from : {inbox?.senderName}</span>
           <span>{new Date(inbox.time).toLocaleString()}</span>
         </div>
+        <div className="second-cont-2">
+          <span>to : {inbox?.receiverEmail} ( {inbox.receiverName} )</span>
+        </div>
+        {inbox.cc !== "" && <div className="second-cont-2">
+          <span>cc : {inbox?.cc}</span>
+        </div>}
         <div className="message-block">
           {inbox.message}
         </div>

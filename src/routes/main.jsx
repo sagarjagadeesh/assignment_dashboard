@@ -35,7 +35,7 @@ class AuthRoutes extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
-    let inboxNotReadCount = inbox?.filter((d) => d.receiverEmail === user).filter((d) => !d.read).length;
+    let inboxNotReadCount = inbox?.filter((d) => d.receiverEmail === user || d.cc === user).filter((d) => !d.read).length;
     return (
       <>
         <Header collapsed={collapsed} handleMinimize={this.handleMinimize} />
