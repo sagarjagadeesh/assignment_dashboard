@@ -56,7 +56,7 @@ class SideNavPage extends Component {
           <Menu iconShape="square">
             <MenuItem
               icon={<FiMail style={{ fontSize: "2rem" }} />}
-              active={routeIndex === "technical"}
+              active={routeIndex === "mail"}
             >
               Mail
             </MenuItem>
