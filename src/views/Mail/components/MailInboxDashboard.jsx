@@ -21,7 +21,7 @@ class Dashboard extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("inbox");
     let inbox = JSON.parse(item);
-    console.log(inbox)
+    console.log(inbox);
     let filterData = inbox?.filter((d) => d.receiverEmail === user);
     this.setState({
       allMails: filterData,
@@ -36,7 +36,7 @@ class Dashboard extends Component {
     this.setState({
       allMails: filterData,
     });
-  }
+  };
 
   handleSelect = (id) => {
     const { selectedMails } = this.state;
@@ -155,6 +155,7 @@ class Dashboard extends Component {
                         onChange={() => this.handleSelect(d.id)}
                         onClick={(ev) => ev.stopPropagation()}
                         value={selectedMails.indexOf(d.id) > -1}
+                        checked={selectedMails.indexOf(d.id) > -1}
                       />
                     </td>
                     <td>
@@ -163,7 +164,9 @@ class Dashboard extends Component {
                         {!d.read && <span className="new-hint">new</span>}
                       </div>
                     </td>
-                    <td>{d.message}</td>
+                    <td>
+                      <div>{d.message}</div>
+                    </td>
                     <td>{new Date(d.time).toLocaleDateString()}</td>
                   </tr>
                 ))}

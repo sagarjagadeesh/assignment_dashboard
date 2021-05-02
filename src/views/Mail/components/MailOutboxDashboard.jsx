@@ -35,8 +35,8 @@ class DashboardMailOutbox extends Component {
     this.setState({
       allMails: filterData,
     });
-  }
-  
+  };
+
   handleSelect = (ev, id) => {
     ev.stopPropagation();
     const { selectedMails } = this.state;
@@ -72,7 +72,7 @@ class DashboardMailOutbox extends Component {
     let user = localStorage.getItem("__auth");
     let item = localStorage.getItem("outbox");
     let inbox = JSON.parse(item);
-    debugger
+    debugger;
     let filterData = inbox.filter((d) => {
       if (selectedMails.indexOf(d.id) > -1) {
         return null;
@@ -143,10 +143,13 @@ class DashboardMailOutbox extends Component {
                         onChange={(ev) => this.handleSelect(ev, d.id)}
                         value={selectedMails.indexOf(d.id) > -1 ? true : false}
                         onClick={(ev) => ev.stopPropagation()}
+                        checked={selectedMails.indexOf(d.id) > -1}
                       />
                     </td>
                     <td>To - {d.receiverName}</td>
-                    <td>{d.message}</td>
+                    <td>
+                      <div>{d.message}</div>
+                    </td>
                     <td>{new Date(d.time).toLocaleDateString()}</td>
                   </tr>
                 ))}

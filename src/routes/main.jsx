@@ -70,7 +70,7 @@ export const MainRoutes = () => {
     <div className="body">
       <ToastContainer
         transition={Zoom}
-        position="bottom-right"
+        position="top-right"
         autoClose={5000}
       />
       <Switch>

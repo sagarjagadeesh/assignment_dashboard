@@ -8,7 +8,7 @@ import { BiTrash } from "react-icons/bi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { MdSend } from "react-icons/md";
 import { history } from "../../../routes";
-import { today } from "../../../config/constants"
+import { today } from "../../../config/constants";
 import { notify } from "../../../components/Notifier/Notifier";
 
 const LeftPanel = ({ inboxNotReadCount }) => {
@@ -16,35 +16,53 @@ const LeftPanel = ({ inboxNotReadCount }) => {
   const [receipentName, setReceipentName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const disable = receipentName.length === 0 || subject.length === 0 || message.length === 0;
+  const disable =
+    receipentName.length === 0 || subject.length === 0 || message.length === 0;
 
   const sendMail = () => {
+    debugger
     let user = localStorage.getItem("__auth");
-    let item = localStorage.getItem("outbox");
-    let last_message_id = localStorage.getItem("last_message_id")
-    let inbox = JSON.parse(item);
-    let payload = {
-      message: message,
-      senderName: user === "testuser@gmail.com"  ? "Sagar" : "Anna Smith",
-      senderEmail: user,
-      receiverName: user === "testuser@gmail.com"  ? "Anna Smith" : "Sagar",
-      receiverEmail: receipentName,
-      read: false,
-      time: today,
-      id: parseInt(last_message_id) + 1,
-      subject: subject
+    if (user !== receipentName) {
+      if (
+        receipentName === "testuser@gmail.com" ||
+        receipentName === "testuser1@gmail.com"
+      ) {
+        let item = localStorage.getItem("outbox");
+        let last_message_id = localStorage.getItem("last_message_id");
+        let inbox = JSON.parse(item);
+        let payload = {
+          message: message,
+          senderName: user === "testuser@gmail.com" ? "Sagar" : "Anna Smith",
+          senderEmail: user,
+          receiverName: user === "testuser@gmail.com" ? "Anna Smith" : "Sagar",
+          receiverEmail: receipentName,
+          read: false,
+          time: today,
+          id: parseInt(last_message_id) + 1,
+          subject: subject,
+        };
+        let filterData = inbox.concat([payload]);
+        localStorage.setItem("outbox", JSON.stringify(filterData));
+        localStorage.setItem("inbox", JSON.stringify(filterData));
+        localStorage.setItem("last_message_id", parseInt(last_message_id) + 1);
+        notify.success("Success", "Mail Sent Successfully");
+        setOpenComposeMail(!openComposeMail);
+        setReceipentName("");
+        setSubject("");
+        setMessage("");
+      } else {
+        notify.error(
+          "Something went wrong",
+          "Requested action not taken: mailbox unavailable"
+        );
+      }
+    } else {
+      notify.error(
+        "Something went wrong",
+        "Sender Address Rejected: logged in with same email."
+      );
     }
-    let filterData = inbox.concat([payload]);
-    localStorage.setItem("outbox", JSON.stringify(filterData));
-    localStorage.setItem("inbox", JSON.stringify(filterData));
-    localStorage.setItem("last_message_id", parseInt(last_message_id) + 1)
-    notify.success("Success", "Mail Sent Successfully")
-    setOpenComposeMail(!openComposeMail)
-    setReceipentName("");
-    setSubject("");
-    setMessage("")
-  }
-
+  };
 
   return (
     <div className="left-box">
@@ -64,7 +82,9 @@ const LeftPanel = ({ inboxNotReadCount }) => {
                 Inbox
               </span>
             </div>
-            {inboxNotReadCount !== 0 && <span className="count count-1">{inboxNotReadCount}</span>}
+            {inboxNotReadCount !== 0 && (
+              <span className="count count-1">{inboxNotReadCount}</span>
+            )}
           </div>
           <div className="sub-category-name">
             <div>
@@ -202,7 +222,9 @@ const LeftPanel = ({ inboxNotReadCount }) => {
             value={message}
           />
           <div>
-            <Button disabled={disable} onClick={() => sendMail()}>Send</Button>
+            <Button disabled={disable} onClick={() => sendMail()}>
+              Send
+            </Button>
           </div>
         </div>
       )}
